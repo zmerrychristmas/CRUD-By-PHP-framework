@@ -55,7 +55,12 @@ Router::scope('/', function (RouteBuilder $routes) {
      * ...and connect the rest of 'Pages' controller's URLs.
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
-
+    $routes->connect('/tests', ['controller' => 'Tests', 'action' => 'index']);
+    $routes->connect('tests/:arg1/:arg2', ['controller' => 'Tests', 'action' =>
+   'index'],['pass' => ['arg1', 'arg2']]);
+    $routes->connect('template',['controller'=>'Products','action'=>'view']);
+    $routes->redirect('/generate1','http://tutorialspoint.com/');
+    $routes->connect('extend',['controller'=>'Extends','action'=>'index']);
     /**
      * Connect catchall routes for all controllers.
      *
