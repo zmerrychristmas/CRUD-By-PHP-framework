@@ -61,6 +61,20 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('template',['controller'=>'Products','action'=>'view']);
     $routes->redirect('/generate1','http://tutorialspoint.com/');
     $routes->connect('extend',['controller'=>'Extends','action'=>'index']);
+    $routes->connect('/elementexample',['controller'=>'Elems','action'=>'index']);
+    $routes->connect('/users/add', ['controller' => 'Users', 'action' => 'add']);
+    $routes->connect('/users', ['controller' => 'Users', 'action' => 'index']);
+    $routes->connect('/users/edit', ['controller' => 'Users', 'action' => 'edit']);
+    $routes->connect('/users/delete', ['controller' => 'Users', 'action' => 'delete']);
+    $routes->connect('/auth',['controller'=>'Authexs','action'=>'index']);
+    $routes->connect('/login',['controller'=>'Authexs','action'=>'login']);
+    $routes->connect('/logout',['controller'=>'Authexs','action'=>'logout']);
+    $routes->connect('/exception/:arg1/:arg2',[
+         'controller'=>'Exps','action'=>'index'],['pass' => ['arg1', 'arg2']]);
+    $routes->connect('logex',['controller'=>'Logexs','action'=>'index']);
+    $routes->connect('register',['controller'=>'Registrations','action'=>'index']);
+    $routes->connect('locale',['controller'=>'Localizations','action'=>'index']);
+
     /**
      * Connect catchall routes for all controllers.
      *
