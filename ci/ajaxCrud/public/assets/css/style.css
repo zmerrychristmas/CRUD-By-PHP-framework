@@ -1,0 +1,6 @@
+.alert-message {
+    color: red;
+}
+ul , ul > li {
+    list-style: none outside none;
+}
